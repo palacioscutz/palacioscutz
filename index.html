@@ -316,43 +316,9 @@
 
 <script>
 // Set minimum date to today
-const today = new Date().toISOString().split('T')[0];
-document.getElementById('date').setAttribute('min', today);
+const today = new Date().toISOString().split('t')[0];
+document.getElementById('date'.setAttribute('min', today);
 
-// Handle form submission
-document.getElementById('bookingForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get values
-    const name = document.getElementById('name').value;
-    const service = document.getElementById('service').value;
-    const date = document.getElementById('date').value;
-    const time = document.getElementById('time').value;
-    
-    // Format date nicely
-    const dateObj = new Date(date + 'T00:00:00');
-    const formattedDate = dateObj.toLocaleDateString('en-GB', {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-    });
-    
-    // Show confirmation
-    document.getElementById('confirmDate').textContent = formattedDate;
-    document.getElementById('confirmTime').textContent = time;
-    document.getElementById('confirmService').textContent = service;
-    document.getElementById('successMsg').style.display = 'block';
-    
-    // Scroll to message
-    document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth' });
-    
-    // Reset form after delay
-    setTimeout(() => {
-        document.getElementById('bookingForm').reset();
-        document.getElementById('successMsg').style.display = 'none';
-    }, 8000);
-});
 </script>
 
 </body>
