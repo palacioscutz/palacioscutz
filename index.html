@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <script>
+// Simple password protection
+const PASSWORD = "youngbarber14";
+if (sessionStorage.getItem("authenticated") !== "true") {
+  const entered = prompt("🔒 Enter password to book:");
+  if (entered !== PASSWORD) {
+    alert("❌ Wrong password! Ask Ian for the password 😊");
+    document.body.innerHTML = "<h2 style='text-align:center;padding:50px;'>🔒 Access denied</h2>";
+  } else {
+    sessionStorage.setItem("authenticated", "true");
+  }
+}
+</script>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palacioscutz💈</title>
